@@ -13,3 +13,12 @@ Rock'em Dance'em!
 9. The users should be able to restart the game.
 
 ![dance robots](https://i.imgur.com/5o03RJy.jpg)
+
+MVP
+
+1. There should be a start page with the intructions, the characters and the start button.
+2. The game must have a minumum of two characters.
+2. Each character must be able to perform 3 dance moves.
+4. After 3 rounds palyers will find out the winner.
+5. The game should have a restart option to begin a new game.
+
