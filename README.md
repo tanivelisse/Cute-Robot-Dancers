@@ -9,7 +9,7 @@ Rock'em Dance'em!
 5. The users should be able to choose dance moves.
 6. The users should be able to play one dance move per round.
 7. The users should be able to battle 3 rounds.
-8. The users should be able to see the winner after the 3 rounds.
+8. The users should be able to see the winner after the 3 rounds are done.
 9. The users should be able to restart the game.
 
 ![dance robots](https://i.imgur.com/5o03RJy.jpg)
