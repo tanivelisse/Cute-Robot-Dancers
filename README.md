@@ -8,7 +8,7 @@ Rock'em Dance'em!
 4. The users will see countdown to get ready to battle.
 5. The user will be able to choose a combinaton of 3 dance moves per round.
 6. The users will see each others dance moves when both have made their choices.
-7. The user with best dance move combination will win the round.
+7. The user with the most dance moves combination will win the round.
 8. The users will be able to battle 3 rounds.
 9. The users will find out the winner of the battle after the 3 rounds are done.
 10. The users will be able to click restart after each battle to play again. 
