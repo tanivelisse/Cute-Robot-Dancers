@@ -3,14 +3,15 @@
 Rock'em Dance'em!
 
 1. The users will be able to read the game instructions before starting the game.
-2. The users will click the start button to start game.
+2. The users will click the start button to start the game.
 3. The users will choose one character each.
 4. The users will see countdown to get ready to battle.
-5. The user will be able to choose one dance move per round.
+5. The user will be able to choose a combinaton of 3 dance moves per round.
 6. The users will see each others dance moves when both have made their choices.
-7. The users will be able to battle 3 rounds.
-8. The users will find out the winner after the 3 rounds are done.
-9. The users will be able to click restart after each battle to play again. 
+7. The user with best dance move combination will win the round.
+8. The users will be able to battle 3 rounds.
+9. The users will find out the winner of the battle after the 3 rounds are done.
+10. The users will be able to click restart after each battle to play again. 
 
 ![dance robots](https://i.imgur.com/5o03RJy.jpg)
 
