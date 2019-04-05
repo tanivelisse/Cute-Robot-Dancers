@@ -1,3 +1,35 @@
 body {
-	background: aqua;
+	background: url(https://i.imgur.com/bN4fKAx.jpg);
+	margin: 20% auto;
+}
+
+#title {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 50px;
+	color: gray;
+	background-color: white;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+#container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#start {
+	border:10px groove purple;
+	border-radius: 50px;
+	height: 100px;
+	width: 200px;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 30px;
+
+	}
+
+.dmvs div {
+	margin: 0 auto;
+	display: none; /*inline-flex*/
 }
