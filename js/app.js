@@ -30,19 +30,30 @@ class Robot {
 
 
 const game = {
-	robotsAtPlay:[],
+	player1:'',
+	player2:'',
 	keysPressed: '',
 	chooseCharacter() {
 		console.log('chose x character');
-		if (event.target.id === 'yellowB'){
+		if (event.target.id === 'yellowB') {
    		const yellowBot = new Robot('The yellowB')
-    	this.robotsAtPlay.push(yellowBot);
-    	//console.log(this.robotsAtPlay);
-    	}
+    		if (this.player1 === '') {
+    			this.player1 = yellowBot;
+    			console.log(this.player1);
+    		} else if(this.player1 !== ''){
+    			this.player2 = yellowBot;
+    			console.log(this.player2);
+    		}
+    	}	
     	if (event.target.id === 'rainbowB'){
-   		const rainbowBot = new Robot('The rainbowB')
-    	this.robotsAtPlay.push(rainbowBot);
-    	//console.log(this.robotsAtPlay);
+	   		const rainbowBot = new Robot('The rainbowB')
+	    	if(this.player1 === '') {
+    			this.player1 = rainbowBot;
+    			console.log(this.player1);
+    		} else if(this.player1 !== ''){
+    			this.player2 = rainbowBot;
+    			console.log(this.player2);
+    		}
     	}
 	},
 	loweringCoolness() {
