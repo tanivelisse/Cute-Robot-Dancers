@@ -28,8 +28,28 @@ body {
 	font-size: 30px;
 
 	}
+.characters div {
+	height: 100px;
+	width: 100px;
+	border:10px solid black;
+	border-radius: 20px;
+	margin: 10px;
+	display: none;
+}
+
+#yellowB {
+	background: yellow;
+}
+
+#rainbowB {
+	background: url(https://i.imgur.com/mC3j0qV.jpg);
+	background-size: cover;
+}
+
 
 .dmvs div {
 	margin: 0 auto;
 	display: none; /*inline-flex*/
+	justify-content: center;
+	align-items: flex-end;
 }
