@@ -55,6 +55,9 @@ const game = {
     			console.log(this.player2);
     		}
     	}
+    	if (this.player1 !== '' && this.player2 !== '') {
+    		$('.characters div').hide("puff");
+    	}
 	},
 	loweringCoolness() {
 
