@@ -12,10 +12,10 @@ class Robot {
 		console.log(`step to the right`);
 	}
 	spin() {
-		console.log;(`I'm spinning!`)
+		console.log(`I'm spinning!`);
 	}
 	jump() {
-		console.log('Jump Jump');
+		console.log('jump jump');
 	}
 	twerk() {
 		console.log(`shake it baby`);
@@ -57,6 +57,7 @@ const game = {
     	}
     	if (this.player1 !== '' && this.player2 !== '') {
     		$('.characters div').hide("puff");
+    		$('.dmvs div').css('display', 'inline-flex')
     	}
 	},
 	loweringCoolness() {
@@ -68,11 +69,8 @@ const game = {
 
 }
 
-
 //jQuery 
-
 //start button
-
 $('#start').on('click', (e)=> {
 	console.log('Let the games begin!');
 	$('#start').hide("puff");
@@ -80,9 +78,38 @@ $('#start').on('click', (e)=> {
 	$('.characters div').css('display','inline-block');;
 })
 
+//choosing characters
 $('.characters div').on('click', ()=>{
 	console.log('Character clicked');
 	game.chooseCharacter();
+})
+//key lsiteners for movements
+$('body').on('keypress', (event) => {
+	//console.log(`${event.target} has been pressed`);
+	if(['a'].includes(event.key)) {
+    game.player1.left();
+  	}
+  	if(['d'].includes(event.key)) {
+    game.player1.right();
+  	}
+  	if(['w'].includes(event.key)) {
+    game.player1.jump();
+  	}
+  	if(['s'].includes(event.key)) {
+    game.player1.spin();
+  	}
+  	if(['j'].includes(event.key)) {
+    game.player2.left();
+  	}
+  	if(['l'].includes(event.key)) {
+    game.player2.right();
+  	}
+  	if(['w'].includes(event.key)) {
+    game.player2.jump();
+  	}
+  	if(['k'].includes(event.key)) {
+    game.player2.spin();
+  	}
 })
 
 
