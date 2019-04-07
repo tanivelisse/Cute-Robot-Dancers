@@ -23,6 +23,8 @@ const game = {
 	player1:'',
 	player2:'',
 	keysPressed: '',
+	timer: 0,
+	timerID:'',
 	chooseCharacter() {
 		console.log('chose x character');
 		if (event.target.id === 'girlB') {
@@ -53,6 +55,7 @@ const game = {
     		$('#pl2').css('display', 'inline-flex')
     		$('.arrows-display').css('display', 'flex');
     		this.assignPlayerBot()
+    		this.startTime();
     	}
 	},
 	assignPlayerBot() {
@@ -69,6 +72,23 @@ const game = {
 			$('#pl2').append('<img src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
 		}
 	},
+	startTime(){
+	this.timerID = setInterval( () => {
+			this.timer ++;
+				//arrown to be displayed at bottom
+			console.log("generating arrows");
+			let arrows = ['left', 'up','right','down'];
+			//console.log(arrows);
+			for(let i = 0; i < arrows.length; i++) {
+				//console.log(arrows.length);
+				let indexNum = Math.floor(Math.random() * 3)+1
+				//console.log(indexNum);
+				arrowDirection = arrows[indexNum]
+				console.log(arrowDirection);
+				}
+			
+			} , 1000)
+	}, 
 	loweringCoolness() {
 
 	},
