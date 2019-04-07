@@ -17,17 +17,7 @@ class Robot {
 	jump() {
 		console.log('jump jump');
 	}
-	twerk() {
-		console.log(`shake it baby`);
-	}
-	backFlip() {
-		console.log(`backflip`);
-	}
-	breakDance() {
-		console.log(`old school!`);
-	}
 }
-
 
 const game = {
 	player1:'',
@@ -35,30 +25,49 @@ const game = {
 	keysPressed: '',
 	chooseCharacter() {
 		console.log('chose x character');
-		if (event.target.id === 'yellowB') {
-   		const yellowBot = new Robot('The yellowB')
+		if (event.target.id === 'girlB') {
+   		const girlBot = new Robot('The girlB')
     		if (this.player1 === '') {
-    			this.player1 = yellowBot;
+    			this.player1 = girlBot;
     			console.log(this.player1);
     		} else if(this.player1 !== ''){
-    			this.player2 = yellowBot;
+    			this.player2 = girlBot;
     			console.log(this.player2);
     		}
     	}	
-    	if (event.target.id === 'rainbowB'){
-	   		const rainbowBot = new Robot('The rainbowB')
+    	if (event.target.id === 'boyB'){
+	   		const boyBot = new Robot('The boyB')
 	    	if(this.player1 === '') {
-    			this.player1 = rainbowBot;
+    			this.player1 = boyBot;
     			console.log(this.player1);
     		} else if(this.player1 !== ''){
-    			this.player2 = rainbowBot;
+    			this.player2 = boyBot;
     			console.log(this.player2);
     		}
     	}
     	if (this.player1 !== '' && this.player2 !== '') {
-    		$('.characters div').hide("puff");
-    		$('.dmvs div').css('display', 'inline-flex')
+    		$('.characters-box div').hide("puff");
+    		$('.metrics-box').css('display', 'flex')
+    		$('.players-box').css('display', 'flex')
+    		$('#pl1').css('display', 'inline-flex')
+    		$('#pl2').css('display', 'inline-flex')
+    		$('.arrows-display').css('display', 'flex');
+    		this.assignPlayerBot()
     	}
+	},
+	assignPlayerBot() {
+		console.log("assigning player pic");
+		console.log(this.player1.name);
+		if (this.player1.name === 'The girlB') {
+			$('#pl1').append('<img src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
+		}else if (this.player1.name === 'The boyB') {
+			$('#pl1').append('<img src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
+		}
+		if (this.player2.name === 'The girlB') {
+			$('#pl2').append('<img src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
+		}else if (this.player2.name === 'The boyB') {
+			$('#pl2').append('<img src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
+		}
 	},
 	loweringCoolness() {
 
@@ -73,13 +82,14 @@ const game = {
 //start button
 $('#start').on('click', (e)=> {
 	console.log('Let the games begin!');
-	$('#start').hide("puff");
-	$('#title').hide("puff");
-	$('.characters div').css('display','inline-block');;
+	$('h2').hide("puff");
+	$('img').hide("puff");
+	$('.intro').hide("puff");
+	$('.characters-box').css('display','flex');
 })
 
 //choosing characters
-$('.characters div').on('click', ()=>{
+$('.characters-box div').on('click', ()=>{
 	console.log('Character clicked');
 	game.chooseCharacter();
 })

@@ -1,55 +1,130 @@
 body {
-	background: url(https://i.imgur.com/bN4fKAx.jpg);
-	margin: 20% auto;
+	background: white;
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	color: gray;
 }
 
-#title {
+.intro {
+	font-family: 'VT323', monospace;
+	font-size: 25px;
+	display: flex;
+	flex-direction: column;
+}
+
+h1 {
 	font-family: 'Press Start 2P', cursive;
 	font-size: 50px;
 	color: gray;
-	background-color: white;
-	padding: 10px;
-	display: flex;
-	justify-content: center;
 }
 
-#container {
+h2 {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 20px;
+	color: gray;
+}
+
+
+#game-container {
+	width: 90%;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
 }
 
 #start {
-	border:10px groove purple;
+	border:20px groove lime;
 	border-radius: 50px;
 	height: 100px;
 	width: 200px;
 	font-family: 'Press Start 2P', cursive;
 	font-size: 30px;
+	color: gray;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-self: center;
 
 	}
-.characters div {
+
+.characters-box {
 	height: 100px;
-	width: 100px;
+	width: 50%;
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.characters-box div {
+	height: 300px;
+	width:175px;
 	border:10px solid black;
 	border-radius: 20px;
 	margin: 10px;
-	display: none;
 }
 
-#yellowB {
-	background: yellow;
-}
-
-#rainbowB {
-	background: url(https://i.imgur.com/mC3j0qV.jpg);
+#girlB {
+	background:url(https://i.imgur.com/DAf01TN.gif);
 	background-size: cover;
+	background-position: center;
 }
 
+#boyB {
+	background: url("https://i.imgur.com/70OM2rc.gif");
+	background-size: cover;
+	background-position: center;
+}
+ .metrics-box {
+ 	font-family: 'VT323', monospace;
+ 	font-size: 30px;
+ 	height: 50px;
+ 	width: 60%;
+ 	display: none;
+ 	flex-direction: row;
+ 	justify-content: space-between;
 
-.dmvs div {
-	margin: 0 auto;
-	display: none; /*inline-flex*/
+ }
+
+.players-box {
+	height: 400px;
+	width: 70%;
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#pl1 {
+	background: white;
+	display: none;
+	flex-direction: row;
+}
+
+#pl2 {
+	background: white;
+	display: none;
+	flex-direction: row;
+}
+
+.arrows-display {
+	background: aqua;
+	font-family: 'VT323', monospace;
+ 	font-size: 30px;
+ 	height: 50px;
+ 	width: 100%;
+ 	display: none;
+ 	flex-direction: column;
+ 	align-self: flex-end;
+ 	margin: 20px auto;
+}
+
+footer {
+	align-content: flex-end;
 	justify-content: center;
-	align-items: flex-end;
 }

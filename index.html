@@ -2,37 +2,53 @@
 <html>
 <head>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Faster+One|Overpass+Mono|Press+Start+2P" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P|VT323" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-	<title>Robot Street Dancer</title>
+	<title>Cute Robot Dancers</title>
 </head>
 <body>
 	<header>
-	<h1 id="title">Robot Street Dancer</h1>
+		<h1>Cute Robot Dancers</h1>
+		<h2>Test your robot moves!</h2>
+		<img src="https://i.imgur.com/DAf01TN.gif" width="200" height="300">
+		<img src="https://i.imgur.com/70OM2rc.gif" width="200" height="300">
+		<section>
+			<div class="intro">
+				<p>INSTRUCTIONS: 
+				<br>
+				To begin each player must pick their robot character by clicking on their images, starting with Player1, followed by Player2.
+				<br>
+				Player1: To make your robot dance press the key A for ⇦, W for ⇧, D for ⇨ and S for ⇩.
+				<br>
+				Player2: To make your robot dance press the key J for ⇦, I for ⇧, L for ⇨ and K for ⇩.
+				<br>
+				You must match your robot's moves with the arrows at the bottom. Each match you make will raise your coolness metric. 
+				<br>
+				The first robot to get to 10 wins the dance-off!
+			</p>
+			<button id="start">START</button>
+			</div>
+		</section>
 	</header>
-	<main id="container">
-		<button id="start">START</button>
-		<div class="characters">
-			<div id="yellowB">Yellow Bot</div>
-			<div id= "rainbowB">Rainbow Bot</div>
+	<main id="game-container">
+		<div class="characters-box">
+			<div id="girlB"></div>
+			<div id= "boyB"></div>
 		</div>
-
-		<div class="dmvs">
-			<div id="dm1">
-				<img src="https://i.imgur.com/Sz6Tz7v.png" width="200" height="300">
+		<div class="metrics-box">
+			<div id="pl1Metric">Coolness level:</div>
+			<div id="pl2Metric">Coolness level:</div>
+		</div>
+		<div class="players-box">
+			<div id="pl1">
 			</div>
-			<div id="dm2">
-				<img src="https://i.imgur.com/KNyrhrT.png" width="200" height="300">
-			</div>
-			<div id="dm3">
-			<img src="https://i.imgur.com/dpYwMFV.png" width="200" height="300">
+			<div id="pl2">
 			</div>
 		</div>
+		<div class="arrows-display">arrows</div>
 	</main>	
-	<footer>
-	<p>Background Photos from <a href="https://pngtree.com/freebackground/street-background_167830.html">pngtree.com</a></p>
-	</footer>
+	<footer>© TIMP 2019</footer>
 <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
