@@ -112,16 +112,21 @@ h2 {
 	flex-direction: row;
 }
 
-.arrows-display {
+.display {
 	background: aqua;
-	font-family: 'VT323', monospace;
- 	font-size: 30px;
+	margin: 20px auto;
+	font-size: 30px;
  	height: 50px;
  	width: 100%;
  	display: none;
  	flex-direction: column;
+ 	justify-content: center;
+ 	align-content: flex-start;
  	align-self: flex-end;
- 	margin: 20px auto;
+}
+
+#arrows-display {
+	font-family: 'VT323', monospace;
 }
 
 footer {

@@ -3,7 +3,7 @@ console.log("Robot Street Dancer!");
 class Robot {
 	constructor(name) {
 		this.name = name
-		this.coolness = 10
+		this.coolness = 0
 	}
 	left() {
 		console.log(`Step to the left`);
@@ -22,7 +22,12 @@ class Robot {
 const game = {
 	player1:'',
 	player2:'',
-	keysPressed: '',
+	arrows:['left', 'up','right','down'],
+	arrowDirection:'',
+	leftArrow:false,
+	upArrow: false,
+	rightArrow: false,
+	downArrow: false,
 	timer: 0,
 	timerID:'',
 	chooseCharacter() {
@@ -53,14 +58,12 @@ const game = {
     		$('.players-box').css('display', 'flex')
     		$('#pl1').css('display', 'inline-flex')
     		$('#pl2').css('display', 'inline-flex')
-    		$('.arrows-display').css('display', 'flex');
+    		$('.display').css('display', 'flex');
     		this.assignPlayerBot()
     		this.startTime();
     	}
 	},
 	assignPlayerBot() {
-		console.log("assigning player pic");
-		console.log(this.player1.name);
 		if (this.player1.name === 'The girlB') {
 			$('#pl1').append('<img src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
 		}else if (this.player1.name === 'The boyB') {
@@ -75,21 +78,49 @@ const game = {
 	startTime(){
 	this.timerID = setInterval( () => {
 			this.timer ++;
-				//arrown to be displayed at bottom
-			console.log("generating arrows");
-			let arrows = ['left', 'up','right','down'];
-			//console.log(arrows);
-			for(let i = 0; i < arrows.length; i++) {
-				//console.log(arrows.length);
-				let indexNum = Math.floor(Math.random() * 3)+1
-				//console.log(indexNum);
-				arrowDirection = arrows[indexNum]
-				console.log(arrowDirection);
-				}
-			
-			} , 1000)
+			this.generateArrows(this.arrows);
+			$('#pl1Metric').text(`Coolness level: ${this.player1.coolness}`)
+			} , 2000)
+	},
+	generateArrows(arr) {//arrows to be displayed at bottom
+		console.log("generating arrows");
+		for(let i = 0; i <1; i++) {
+			let indexNum = Math.floor(Math.random() * 3)
+			this.arrowDirection = arr[indexNum]
+			this.displayArrows();
+		}			
 	}, 
-	loweringCoolness() {
+	displayArrows() {
+			console.log(this.arrowDirection);
+		if (this.arrowDirection === "left"){
+			$('#arrows-display').append('⇦')
+		}else if (this.arrowDirection === "up"){
+			$('#arrows-display').append('⇧')
+		}else if (this.arrowDirection === "right"){
+			$('#arrows-display').append('⇨')
+		} else if (this.arrowDirection === "down"){
+			$('#arrows-display').append('⇩')
+		}
+	},
+	playerMATCH() {
+		//IF PLAYER PRESSES KEY WHEN ARROW IS DISPLAYED AND IS CORRECT KEY IS A MATCH
+		//IF IS INCORRECT KEY LOWER SCORE
+		if(this.arrowDirection === "left" && this.leftArrow === true) {
+			this.player1.coolness ++;
+			console.log("Match!");
+		}
+		if(this.arrowDirection === "up" && this.upArrow === true) {
+			this.player1.coolness ++;
+			console.log("Match!");
+		}
+		if(this.arrowDirection === "right" && this.rightArrow === true) {
+			this.player1.coolness ++;
+			console.log("Match!");
+		}
+		if(this.arrowDirection === "down" && this.downArrow === true) {
+			this.player1.coolness ++;
+			console.log("Match!");
+		}
 
 	},
 	winBattle() {
@@ -113,32 +144,47 @@ $('.characters-box div').on('click', ()=>{
 	console.log('Character clicked');
 	game.chooseCharacter();
 })
-//key lsiteners for movements
+//key listeners for player moves
 $('body').on('keypress', (event) => {
-	//console.log(`${event.target} has been pressed`);
 	if(['a'].includes(event.key)) {
-    game.player1.left();
+		game.leftArrow= true;
+		game.playerMATCH();
+    	game.player1.left();
   	}
   	if(['d'].includes(event.key)) {
-    game.player1.right();
+  		game.rightArrow= true;
+		game.playerMATCH();
+    	game.player1.right();
   	}
   	if(['w'].includes(event.key)) {
-    game.player1.jump();
+  		game.upArrow= true;
+		game.playerMATCH();
+    	game.player1.jump();
   	}
   	if(['s'].includes(event.key)) {
-    game.player1.spin();
+  		game.downArrow= true;
+		game.playerMATCH();
+    	game.player1.spin();
   	}
   	if(['j'].includes(event.key)) {
-    game.player2.left();
+  		game.leftArrow= true;
+		game.playerMATCH();
+    	game.player2.left();
   	}
   	if(['l'].includes(event.key)) {
-    game.player2.right();
+  		game.rightArrow= true;
+		game.playerMATCH();
+    	game.player2.right();
   	}
   	if(['w'].includes(event.key)) {
-    game.player2.jump();
+  		game.leftArrow= true;
+		game.playerMATCH();
+    	game.player2.jump();
   	}
   	if(['k'].includes(event.key)) {
-    game.player2.spin();
+  		game.leftArrow= true;
+		game.playerMATCH();
+    	game.player2.spin();
   	}
 })
 
