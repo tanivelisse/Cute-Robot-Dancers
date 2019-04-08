@@ -5,7 +5,7 @@ class Robot {
 		this.name = name
 		this.coolness = 0
 	}
-	left() {//must fix .replaceWith d
+	left() {
 		//console.log(`Step to the left`);
 		if(game.player1.name === 'The boyB' && game.leftKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/FlhUyk3.gif" height="300px" width:"175px/>');
@@ -19,14 +19,16 @@ class Robot {
 	}
 	toeTouch() {
 		//console.log(`Fabulous toe touch!`);
-		if(game.player1.name === 'The boyB' && game.upKey1 === true){
+		if(game.player1.name === 'The boyB' && game.downKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/aGpa5Pk.gif" height="300px" width:"200"px/>');
+			console.log('Toe Touch was pressed');
 		}
 	}
 	handsUp() {
 		//console.log('Hands Up!');
-		if(game.player1.name === 'The boyB' && game.downKey1 === true){
+		if(game.player1.name === 'The boyB' && game.upKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/nDnTz3V.gif" height="300px" width:"200"px/>');
+			console.log('Hands up was pressed');
 		}
 	}
 }
@@ -81,7 +83,7 @@ const game = {
 	assignPlayerBot() {
 		if (this.player1.name === 'The girlB') {
 			$('#pl1').append('<img id="move" src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
-
+			console.log($("#pl1"));
 		}else if (this.player1.name === 'The boyB') {
 			$('#pl1').append('<img id="move" src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
 		}
@@ -101,6 +103,7 @@ const game = {
 	},
 	generateArrows(arr) {//arrows to be displayed at bottom
 		console.log("generating arrows");
+		console.log(this.player1);
 		for(let i = 0; i <1; i++) {
 			let indexNum = Math.floor(Math.random() * 3)
 			this.arrowDirection = arr[indexNum]
@@ -110,7 +113,6 @@ const game = {
 	displayArrows() {
 			console.log(this.arrowDirection);
 			let $element = $('.display')
-			console.log($element)
 		if (this.arrowDirection === "left"){
 			$element.text('⇦')
 		}else if (this.arrowDirection === "up"){
@@ -121,9 +123,7 @@ const game = {
 			$element.text('⇩')
 		}
 	},
-	playerMATCH() {
-		//IF PLAYER PRESSES KEY WHEN ARROW IS DISPLAYED AND IS CORRECT KEY IS A MATCH
-		//IF IS INCORRECT KEY LOWER SCORE
+	player1Match() {
 		if(this.arrowDirection === "left" && this.leftKey1 === true && this.player1.coolness !== 10) {
 			this.player1.coolness ++;
 			console.log("Match!");
@@ -152,6 +152,9 @@ const game = {
 			this.player1.coolness--;
 			console.log("wrong pl2!");
 		}
+		this.winBattle();
+	},
+	player2Match() {
 		if(this.arrowDirection === "left" && this.leftKey2 === true && this.player2.coolness !== 10) {
 			this.player2.coolness ++;
 			console.log("Match pl2!");
@@ -216,43 +219,43 @@ $('.characters-box div').on('click', ()=>{
 //key listeners for player moves
 $('body').on('keydown', (event) => {
 	if(['a'].includes(event.key)) {
-		game.leftKey1= true;
-		game.playerMATCH();
+		game.leftKey1 = true;
+		game.player1Match();
     	game.player1.left();
   	}
   	if(['d'].includes(event.key)) {
-  		game.rightKey1= true;
-		game.playerMATCH();
+  		game.rightKey1 = true;
+		game.player1Match();
     	game.player1.right();
   	}
   	if(['w'].includes(event.key)) {
-  		game.upKey1= true;
-		game.playerMATCH();
+  		game.upKey1 = true;
+		game.player1Match();
     	game.player1.handsUp();
   	}
   	if(['s'].includes(event.key)) {
-  		game.downKey1= true;
-		game.playerMATCH();
+  		game.downKey1 = true;
+		game.player1Match();
     	game.player1.toeTouch();
   	}
   	if(['j'].includes(event.key)) {
-  		game.leftKey2= true;
-		game.playerMATCH();
+  		game.leftKey2 = true;
+		game.player2Match();
     	game.player2.left();
   	}
   	if(['l'].includes(event.key)) {
-  		game.rightKey2= true;
-		game.playerMATCH();
+  		game.rightKey2 = true;
+		game.player2Match();
     	game.player2.right();
   	}
   	if(['i'].includes(event.key)) {
-  		game.upKey2= true;
-		game.playerMATCH();
+  		game.upKey2 = true;
+		game.player2Match();
     	game.player2.handsUp();
   	}
   	if(['k'].includes(event.key)) {
-  		game.downKey2= true;
-		game.playerMATCH();
+  		game.downKey2 = true;
+		game.player2Match();
     	game.player2.toeTouch();
   	}
 })
@@ -260,28 +263,28 @@ $('body').on('keydown', (event) => {
 
 $('body').on('keyup', (event) => {
 	if(['a'].includes(event.key)) {
-		game.leftKey1= false;
+		game.leftKey1 = false;
   	}
   	if(['d'].includes(event.key)) {
-  		game.rightKey1= false;
+  		game.rightKey1 = false;
   	}
   	if(['w'].includes(event.key)) {
-  		game.upKey1= false;
+  		game.upKey1 = false;
   	}
   	if(['s'].includes(event.key)) {
-  		game.downKey1= false;
+  		game.downKey1 = false;
   	}
   	if(['j'].includes(event.key)) {
-  		game.leftKey2= false;
+  		game.leftKey2 = false;
   	}
   	if(['l'].includes(event.key)) {
-  		game.rightKey2= false;
+  		game.rightKey2 = false;
   	}
   	if(['i'].includes(event.key)) {
-  		game.upKey2= false;
+  		game.upKey2 = false;
   	}
   	if(['k'].includes(event.key)) {
-  		game.downKey2= false;
+  		game.downKey2 = false;
   	}
 })
 
