@@ -6,25 +6,25 @@ class Robot {
 		this.coolness = 0
 	}
 	left() {//must fix .replaceWith d
-		console.log(`Step to the left`);
+		//console.log(`Step to the left`);
 		if(game.player1.name === 'The boyB' && game.leftKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/FlhUyk3.gif" height="300px" width:"175px/>');
 		}
 	}
 	right() {
-		console.log(`step to the right`);
+		//console.log(`step to the right`);
 		if(game.player1.name === 'The boyB' && game.rightKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/pgvyTKC.gif" height="300px" width:"175px/>');
 		}
 	}
 	toeTouch() {
-		console.log(`Fabulous toe touch!`);
+		//console.log(`Fabulous toe touch!`);
 		if(game.player1.name === 'The boyB' && game.upKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/aGpa5Pk.gif" height="300px" width:"200"px/>');
 		}
 	}
 	handsUp() {
-		console.log('Hands Up!');
+		//console.log('Hands Up!');
 		if(game.player1.name === 'The boyB' && game.downKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/nDnTz3V.gif" height="300px" width:"200"px/>');
 		}
@@ -81,6 +81,7 @@ const game = {
 	assignPlayerBot() {
 		if (this.player1.name === 'The girlB') {
 			$('#pl1').append('<img id="move" src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
+
 		}else if (this.player1.name === 'The boyB') {
 			$('#pl1').append('<img id="move" src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
 		}
@@ -96,7 +97,7 @@ const game = {
 			this.generateArrows(this.arrows);
 			$('#pl1Metric').text(`Coolness level: ${this.player1.coolness}`)
 			$('#pl2Metric').text(`Coolness level: ${this.player2.coolness}`)
-			} , 3000)
+			} , 2000)
 	},
 	generateArrows(arr) {//arrows to be displayed at bottom
 		console.log("generating arrows");
@@ -108,14 +109,16 @@ const game = {
 	}, 
 	displayArrows() {
 			console.log(this.arrowDirection);
+			let $element = $('.display')
+			console.log($element)
 		if (this.arrowDirection === "left"){
-			$('#arrows-display').append('⇦')
+			$element.text('⇦')
 		}else if (this.arrowDirection === "up"){
-			$('#arrows-display').append('⇧')
+			$element.text('⇧')
 		}else if (this.arrowDirection === "right"){
-			$('#arrows-display').append('⇨')
+			$element.text('⇨')
 		} else if (this.arrowDirection === "down"){
-			$('#arrows-display').append('⇩')
+			$element.text('⇩')
 		}
 	},
 	playerMATCH() {
@@ -255,5 +258,30 @@ $('body').on('keydown', (event) => {
 })
 
 
-$('body').on('keydown', (event) => {})
+$('body').on('keyup', (event) => {
+	if(['a'].includes(event.key)) {
+		game.leftKey1= false;
+  	}
+  	if(['d'].includes(event.key)) {
+  		game.rightKey1= false;
+  	}
+  	if(['w'].includes(event.key)) {
+  		game.upKey1= false;
+  	}
+  	if(['s'].includes(event.key)) {
+  		game.downKey1= false;
+  	}
+  	if(['j'].includes(event.key)) {
+  		game.leftKey2= false;
+  	}
+  	if(['l'].includes(event.key)) {
+  		game.rightKey2= false;
+  	}
+  	if(['i'].includes(event.key)) {
+  		game.upKey2= false;
+  	}
+  	if(['k'].includes(event.key)) {
+  		game.downKey2= false;
+  	}
+})
 

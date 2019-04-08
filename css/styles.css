@@ -116,19 +116,16 @@ h2 {
 
 .display {
 	background: aqua;
-	margin: 20px auto;
-	font-size: 30px;
- 	height: 50px;
- 	width: 100%;
+	margin: 20px;
+	font-family: 'VT323', monospace;
+	font-size: 60px;
+ 	height: 100px;
+ 	width: 100px;
+ 	border-radius: 100px;
  	display: none;
  	flex-direction: column;
  	justify-content: center;
- 	align-content: flex-start;
- 	align-self: flex-end;
-}
-
-#arrows-display {
-	font-family: 'VT323', monospace;
+ 	align-self: center;
 }
 
 footer {
