@@ -9,12 +9,16 @@ class Robot {
 		//console.log(`Step to the left`);
 		if(game.player1.name === 'The boyB' && game.leftKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/FlhUyk3.gif" height="300px" width:"175px/>');
+		} else if (game.player1.name === 'The girlB' && game.leftKey1 === true) {
+			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/cBhKQxA.gif" height="300px" width:"175px/>');
 		}
 	}
 	right() {
 		//console.log(`step to the right`);
 		if(game.player1.name === 'The boyB' && game.rightKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/pgvyTKC.gif" height="300px" width:"175px/>');
+		} else if (game.player1.name === 'The girlB' && game.rightKey1 === true) {
+			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/gGa4WMX.gif" height="300px" width:"175px/>');
 		}
 	}
 	toeTouch() {
@@ -22,6 +26,8 @@ class Robot {
 		if(game.player1.name === 'The boyB' && game.downKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/aGpa5Pk.gif" height="300px" width:"200"px/>');
 			console.log('Toe Touch was pressed');
+		} else if (game.player1.name === 'The girlB' && game.downKey1 === true) {
+			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/lH6Uxwb.gif" height="300px" width:"175px/>');
 		}
 	}
 	handsUp() {
@@ -29,6 +35,8 @@ class Robot {
 		if(game.player1.name === 'The boyB' && game.upKey1 === true){
 			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/nDnTz3V.gif" height="300px" width:"200"px/>');
 			console.log('Hands up was pressed');
+		}else if (game.player1.name === 'The girlB' && game.upKey1 === true) {
+			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/nnYUW2b.gif" height="300px" width:"175px/>');
 		}
 	}
 }
