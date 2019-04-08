@@ -6,16 +6,16 @@ class Robot {
 		this.coolness = 0
 	}
 	left() {
-		console.log(`Step to the left`);
+		//console.log(`Step to the left`);
 	}
 	right() {
-		console.log(`step to the right`);
+		//console.log(`step to the right`);
 	}
 	spin() {
-		console.log(`I'm spinning!`);
+		//console.log(`I'm spinning!`);
 	}
 	jump() {
-		console.log('jump jump');
+		//console.log('jump jump');
 	}
 }
 
@@ -28,28 +28,31 @@ const game = {
 	upArrow: false,
 	rightArrow: false,
 	downArrow: false,
+	leftArrow2:false,
+	upArrow2: false,
+	rightArrow2: false,
+	downArrow2: false,
 	timer: 0,
 	timerID:'',
 	chooseCharacter() {
-		console.log('chose x character');
 		if (event.target.id === 'girlB') {
    		const girlBot = new Robot('The girlB')
     		if (this.player1 === '') {
     			this.player1 = girlBot;
-    			console.log(this.player1);
+    			//console.log(this.player1);
     		} else if(this.player1 !== ''){
     			this.player2 = girlBot;
-    			console.log(this.player2);
+    			//console.log(this.player2);
     		}
     	}	
     	if (event.target.id === 'boyB'){
 	   		const boyBot = new Robot('The boyB')
 	    	if(this.player1 === '') {
     			this.player1 = boyBot;
-    			console.log(this.player1);
+    			//console.log(this.player1);
     		} else if(this.player1 !== ''){
     			this.player2 = boyBot;
-    			console.log(this.player2);
+    			//console.log(this.player2);
     		}
     	}
     	if (this.player1 !== '' && this.player2 !== '') {
@@ -80,7 +83,8 @@ const game = {
 			this.timer ++;
 			this.generateArrows(this.arrows);
 			$('#pl1Metric').text(`Coolness level: ${this.player1.coolness}`)
-			} , 2000)
+			$('#pl2Metric').text(`Coolness level: ${this.player2.coolness}`)
+			} , 3000)
 	},
 	generateArrows(arr) {//arrows to be displayed at bottom
 		console.log("generating arrows");
@@ -105,26 +109,73 @@ const game = {
 	playerMATCH() {
 		//IF PLAYER PRESSES KEY WHEN ARROW IS DISPLAYED AND IS CORRECT KEY IS A MATCH
 		//IF IS INCORRECT KEY LOWER SCORE
-		if(this.arrowDirection === "left" && this.leftArrow === true) {
+		if(this.arrowDirection === "left" && this.leftArrow === true && this.player1.coolness !== 10) {
 			this.player1.coolness ++;
+			this.leftArrow = false;
 			console.log("Match!");
+		} else if(this.arrowDirection === "left" && this.leftArrow === false && this.player1.coolness !== 0) {
+			this.player1.coolness--;
+			console.log("wrong!");
 		}
-		if(this.arrowDirection === "up" && this.upArrow === true) {
+		if(this.arrowDirection === "up" && this.upArrow === true && this.player1.coolness !== 10) {
 			this.player1.coolness ++;
+			this.upArrow = false;
 			console.log("Match!");
+		} else if(this.arrowDirection === "up" && this.upArrow === false && this.player1.coolness !== 0) {
+			this.player1.coolness--;
+			console.log("wrong!");
 		}
-		if(this.arrowDirection === "right" && this.rightArrow === true) {
+		if(this.arrowDirection === "right" && this.rightArrow === true && this.player1.coolness !== 10) {
 			this.player1.coolness ++;
+			this.rightArrow = false;
 			console.log("Match!");
+		} else if(this.arrowDirection === "right" && this.rightArrow === false && this.player1.coolness !== 0) {
+			this.player1.coolness--;
+			console.log("wrong!");
 		}
-		if(this.arrowDirection === "down" && this.downArrow === true) {
-			this.player1.coolness ++;
+		if(this.arrowDirection === "down" && this.downArrow === true && this.player1.coolness !== 10) {
+			this.player1.coolness++;
+			this.downArrow = false
 			console.log("Match!");
+		} else if(this.arrowDirection === "down" && this.downArrow === false && this.player1.coolness !== 0) {
+			this.player1.coolness--;
+			console.log("wrong pl2!");
 		}
-
+		if(this.arrowDirection === "left" && this.leftArrow2 === true && this.player2.coolness !== 10) {
+			this.player2.coolness ++;
+			this.leftArrow2 = false;
+			console.log("Match pl2!");
+		} else if(this.arrowDirection === "left" && this.leftArrow2 === false && this.player2.coolness !== 0) {
+			this.player2.coolness--;
+			console.log("wrong pl2!");
+		}
+		if(this.arrowDirection === "up" && this.upArrow2 === true && this.player2.coolness !== 10) {
+			this.player2.coolness ++;
+			this.upArrow2 = false;
+			console.log("Match pl2!");
+		} else if(this.arrowDirection === "up" && this.upArrow2 === false && this.player2.coolness !== 0) {
+			this.player2.coolness--;
+			console.log("wrong pl2!");
+		}
+		if(this.arrowDirection === "right" && this.rightArrow2 === true && this.player2.coolness !== 10) {
+			this.player2.coolness ++;
+			this.rightArrow2 = false;
+			console.log("Match pl2!");
+		} else if(this.arrowDirection === "right" && this.rightArrow2 === false && this.player2.coolness !== 0) {
+			this.player2.coolness--;
+			console.log("wrong pl2!");
+		}
+		if(this.arrowDirection === "down" && this.downArrow2 === true && this.player2.coolness !== 10) {
+			this.player2.coolness ++;
+			this.downArrow2 = false;
+			console.log("Match pl2!");
+		} else if(this.arrowDirection === "down" && this.downArrow2 === false && this.player2.coolness !== 0) {
+			this.player2.coolness--;
+			console.log("wrong pl2!");
+		}
 	},
 	winBattle() {
-
+		//clearInterval when player reaches 10
 	}
 
 }
@@ -167,22 +218,22 @@ $('body').on('keypress', (event) => {
     	game.player1.spin();
   	}
   	if(['j'].includes(event.key)) {
-  		game.leftArrow= true;
+  		game.leftArrow2= true;
 		game.playerMATCH();
     	game.player2.left();
   	}
   	if(['l'].includes(event.key)) {
-  		game.rightArrow= true;
+  		game.rightArrow2= true;
 		game.playerMATCH();
     	game.player2.right();
   	}
   	if(['w'].includes(event.key)) {
-  		game.leftArrow= true;
+  		game.leftArrow2= true;
 		game.playerMATCH();
     	game.player2.jump();
   	}
   	if(['k'].includes(event.key)) {
-  		game.leftArrow= true;
+  		game.leftArrow2= true;
 		game.playerMATCH();
     	game.player2.spin();
   	}
