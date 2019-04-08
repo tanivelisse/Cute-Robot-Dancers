@@ -1,4 +1,4 @@
-console.log("Robot Street Dancer!");
+console.log("Cute Robot Dancers!");
 
 class Robot {
 	constructor(name) {
@@ -6,16 +6,28 @@ class Robot {
 		this.coolness = 0
 	}
 	left() {
-		//console.log(`Step to the left`);
+		console.log(`Step to the left`);
+		if(game.player1.name === 'The boyB'){
+			$("#pl1").replaceWith('<img src="https://i.imgur.com/FlhUyk3.gif" height="300px" width:"175px/>');
+		}
 	}
 	right() {
-		//console.log(`step to the right`);
+		console.log(`step to the right`);
+		if(game.player1.name === 'The boyB'){
+			$("#pl1").replaceWith('<img src="https://i.imgur.com/pgvyTKC.gif" height="300px" width:"175px/>');
+		}
 	}
 	spin() {
-		//console.log(`I'm spinning!`);
+		console.log(`I'm spinning!`);
+		if(game.player1.name === 'The boyB'){
+			$("#pl1").replaceWith('<img src="https://i.imgur.com/aGpa5Pk.gif" height="300px" width:"200"px/>');
+		}
 	}
 	jump() {
-		//console.log('jump jump');
+		console.log('jump jump');
+		if(game.player1.name === 'The boyB'){
+			$("#pl1").replaceWith('<img src="https://i.imgur.com/nDnTz3V.gif" height="300px" width:"200"px/>');
+		}
 	}
 }
 
@@ -173,9 +185,17 @@ const game = {
 			this.player2.coolness--;
 			console.log("wrong pl2!");
 		}
+		this.winBattle();
 	},
 	winBattle() {
 		//clearInterval when player reaches 10
+		if (game.player1.coolness === 11){
+			clearInterval(this.timerID);
+		}
+		if (game.player2.coolness === 11){
+			clearInterval(this.timerID)
+		}
+
 	}
 
 }

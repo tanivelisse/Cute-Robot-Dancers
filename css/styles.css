@@ -63,11 +63,13 @@ h2 {
 }
 
 .characters-box div {
-	height: 300px;
-	width:175px;
-	border:10px solid black;
+	height: 400px;
+	width:255px;
+	border:10px solid gray;
 	border-radius: 20px;
 	margin: 10px;
+	font-family: 'VT323', monospace;
+	font-size: 25px;
 }
 
 #girlB {
@@ -130,6 +132,7 @@ h2 {
 }
 
 footer {
+	margin: 20px;
 	align-content: flex-end;
 	justify-content: center;
 }
