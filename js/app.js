@@ -266,13 +266,25 @@ $('#start').on('click', (e)=> {
 	$('img').hide();
 	$('.intro').hide();
 	$('.characters-box').css('display','flex');
-})
+});
 
 //choosing characters
 $('.characters-box div').on('click', ()=> {
 	console.log('Character clicked');
 	game.chooseCharacter();
-})
+});
+
+$('#girlB').on('click', ()=> {
+	$('#girlB').animate({
+		backgroundColor: 'aqua'
+	})
+});
+
+$('#boyB').on('click', ()=> {
+	$('#boyB').animate({
+		backgroundColor: 'aqua'
+	})
+});
 //key listeners for player moves
 $('body').on('keydown', (event) => {
 	if (['a'].includes(event.key)) {
@@ -315,7 +327,7 @@ $('body').on('keydown', (event) => {
 		game.player2Match();
     	game.player2.toeTouch();
   	}
-})
+});
 
 
 $('body').on('keyup', (event) => {
@@ -343,5 +355,5 @@ $('body').on('keyup', (event) => {
   	if (['k'].includes(event.key)) {
   		game.downKey2 = false;
   	}
-})
+});
 
