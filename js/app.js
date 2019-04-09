@@ -8,35 +8,57 @@ class Robot {
 	left() {
 		//console.log(`Step to the left`);
 		if(game.player1.name === 'The boyB' && game.leftKey1 === true){
-			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/FlhUyk3.gif" height="300px" width:"175px/>');
+			$("#move-pl1").replaceWith('<img id="move-pl1" src="https://i.imgur.com/FlhUyk3.gif" height="300px" width:"175px/>');
 		} else if (game.player1.name === 'The girlB' && game.leftKey1 === true) {
-			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/cBhKQxA.gif" height="300px" width:"175px/>');
+			$("#move-pl1").replaceWith('<img id="move-pl1" src="https://i.imgur.com/cBhKQxA.gif" height="300px" width:"175px/>');
+		}
+		if(game.player2.name === 'The boyB' && game.leftKey2 === true){
+			$("#move-pl2").replaceWith('<img id="move-pl2" src="https://i.imgur.com/FlhUyk3.gif" height="300px" width:"175px/>');
+		} else if (game.player2.name === 'The girlB' && game.leftKey2 === true) {
+			$("#move-pl2").replaceWith('<img id="move-pl2" src="https://i.imgur.com/cBhKQxA.gif" height="300px" width:"175px/>');
 		}
 	}
 	right() {
 		//console.log(`step to the right`);
 		if(game.player1.name === 'The boyB' && game.rightKey1 === true){
-			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/pgvyTKC.gif" height="300px" width:"175px/>');
+			$("#move-pl1").replaceWith('<img id="move-pl1" src="https://i.imgur.com/pgvyTKC.gif" height="300px" width:"175px/>');
 		} else if (game.player1.name === 'The girlB' && game.rightKey1 === true) {
-			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/gGa4WMX.gif" height="300px" width:"175px/>');
+			$("#move-pl1").replaceWith('<img id="move-pl1" src="https://i.imgur.com/gGa4WMX.gif" height="300px" width:"175px/>');
+		}
+		if(game.player2.name === 'The boyB' && game.rightKey2 === true){
+			$("#move-pl2").replaceWith('<img id="move-pl2" src="https://i.imgur.com/pgvyTKC.gif" height="300px" width:"175px/>');
+		} else if (game.player2.name === 'The girlB' && game.rightKey2 === true) {
+			$("#move-pl2").replaceWith('<img id="move-pl2" src="https://i.imgur.com/gGa4WMX.gif" height="300px" width:"175px/>');
 		}
 	}
 	toeTouch() {
 		//console.log(`Fabulous toe touch!`);
 		if(game.player1.name === 'The boyB' && game.downKey1 === true){
-			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/aGpa5Pk.gif" height="300px" width:"200"px/>');
+			$("#move-pl1").replaceWith('<img id="move-pl1" src="https://i.imgur.com/aGpa5Pk.gif" height="300px" width:"200"px/>');
 			console.log('Toe Touch was pressed');
 		} else if (game.player1.name === 'The girlB' && game.downKey1 === true) {
-			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/lH6Uxwb.gif" height="300px" width:"175px/>');
+			$("#move-pl1").replaceWith('<img id="move-pl1" src="https://i.imgur.com/lH6Uxwb.gif" height="300px" width:"175px/>');
+		}
+		if(game.player2.name === 'The boyB' && game.downKey2 === true){
+			$("#move-pl2").replaceWith('<img id="move-pl2" src="https://i.imgur.com/aGpa5Pk.gif" height="300px" width:"200"px/>');
+			console.log('Toe Touch was pressed');
+		} else if (game.player2.name === 'The girlB' && game.downKey2 === true) {
+			$("#move-pl2").replaceWith('<img id="move-pl2" src="https://i.imgur.com/lH6Uxwb.gif" height="300px" width:"175px/>');
 		}
 	}
 	handsUp() {
 		//console.log('Hands Up!');
 		if(game.player1.name === 'The boyB' && game.upKey1 === true){
-			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/nDnTz3V.gif" height="300px" width:"200"px/>');
+			$("#move-pl1").replaceWith('<img id="move-pl1" src="https://i.imgur.com/nDnTz3V.gif" height="300px" width:"200"px/>');
 			console.log('Hands up was pressed');
 		}else if (game.player1.name === 'The girlB' && game.upKey1 === true) {
-			$("#move").replaceWith('<img id="move" src="https://i.imgur.com/nnYUW2b.gif" height="300px" width:"175px/>');
+			$("#move-pl1").replaceWith('<img id="move-pl1" src="https://i.imgur.com/nnYUW2b.gif" height="300px" width:"175px/>');
+		}
+		if(game.player2.name === 'The boyB' && game.upKey2 === true){
+			$("#move-pl2").replaceWith('<img id="move-pl2" src="https://i.imgur.com/nDnTz3V.gif" height="300px" width:"200"px/>');
+			console.log('Hands up was pressed');
+		}else if (game.player2.name === 'The girlB' && game.upKey2 === true) {
+			$("#move-pl2").replaceWith('<img id="move-pl2" src="https://i.imgur.com/nnYUW2b.gif" height="300px" width:"175px/>');
 		}
 	}
 }
@@ -90,15 +112,15 @@ const game = {
 	},
 	assignPlayerBot() {
 		if (this.player1.name === 'The girlB') {
-			$('#pl1').append('<img id="move" src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
+			$('#pl1').append('<img id="move-pl1" src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
 			console.log($("#pl1"));
 		}else if (this.player1.name === 'The boyB') {
-			$('#pl1').append('<img id="move" src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
+			$('#pl1').append('<img id="move-pl1" src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
 		}
 		if (this.player2.name === 'The girlB') {
-			$('#pl2').append('<img id="move" src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
+			$('#pl2').append('<img id="move-pl2" src="https://i.imgur.com/DAf01TN.gif" height="300px" width:"175px/>');
 		}else if (this.player2.name === 'The boyB') {
-			$('#pl2').append('<img id="move" src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
+			$('#pl2').append('<img id="move-pl2" src="https://i.imgur.com/70OM2rc.gif" height="300px" width:"175px/>');
 		}
 	},
 	startTime(){
@@ -119,17 +141,22 @@ const game = {
 		}			
 	}, 
 	displayArrows() {
-			console.log(this.arrowDirection);
-			let $element = $('.display')
+		console.log(this.arrowDirection);
+		let whichArrow;
+		let $element = $('#arrows-display')
+		$element.fadeIn()
 		if (this.arrowDirection === "left"){
-			$element.text('⇦')
+			whichArrow = '⇦'
 		}else if (this.arrowDirection === "up"){
-			$element.text('⇧')
+			whichArrow = '⇧'
 		}else if (this.arrowDirection === "right"){
-			$element.text('⇨')
+			whichArrow = '⇨'
 		} else if (this.arrowDirection === "down"){
-			$element.text('⇩')
-		}
+			whichArrow = '⇩'
+		} 
+
+		$element.text(whichArrow)
+		$element.fadeOut()
 	},
 	player1Match() {
 		if(this.arrowDirection === "left" && this.leftKey1 === true && this.player1.coolness !== 10) {
