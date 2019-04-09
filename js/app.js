@@ -129,7 +129,13 @@ const game = {
 			this.generateArrows(this.arrows);
 			$('#pl1Metric').text(`Coolness level: ${this.player1.coolness}`);
 			$('#pl2Metric').text(`Coolness level: ${this.player2.coolness}`);
-			} , 2000)
+			} , 700)
+	},
+	playAudio() { 
+  		document.getElementById('audio').play();
+	}, 
+	pauseAudio() { 
+  		document.getElementById('audio').pause(); 
 	},
 	generateArrows(arr) {
 		//console.log("generating arrows");
@@ -138,6 +144,7 @@ const game = {
 			let indexNum = Math.floor(Math.random() * 3)
 			this.arrowDirection = arr[indexNum]
 			this.displayArrows();
+			this.playAudio();
 		}			
 	}, 
 	displayArrows() {
@@ -226,16 +233,15 @@ const game = {
 		console.log("calling winBattle");
 		//clearInterval when player reaches 10
 		if (game.player1.coolness === 10) {
-			//clearInterval(this.timerID);
-			console.log("player1 won");
+			//console.log("player1 won");
 			$('.metrics-box').css('display', 'none');
     		$('.players-box').css('display', 'none');
     		$('#pl1').css('display', 'none');
     		$('#pl2').css('display', 'none');
     		$('.display').css('display', 'none');
     		$("#player1-wins").css('display','flex')
+    		this.pauseAudio();
     		clearInterval(this.timerID);
-
 		}
 		if (game.player2.coolness === 10) {
 			$('.metrics-box').css('display', 'none');
@@ -245,6 +251,7 @@ const game = {
     		$('.display').css('display', 'none');
     		$("#player2-wins").css('display','flex')
     		clearInterval(this.timerID);
+    		this.pauseAudio();
 		}
 
 	}
@@ -255,9 +262,9 @@ const game = {
 //start button
 $('#start').on('click', (e)=> {
 	console.log('Let the games begin!');
-	$('h2').hide("puff");
-	$('img').hide("puff");
-	$('.intro').hide("puff");
+	$('h2').hide();
+	$('img').hide();
+	$('.intro').hide();
 	$('.characters-box').css('display','flex');
 })
 

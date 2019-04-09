@@ -134,15 +134,23 @@ h2 {
 }
 
 #player1-wins {
+	background: #ABFF0B;
+	width: 100%;
+	padding: 20px;
 	font-family: 'Press Start 2P', cursive;
 	font-size: 60px;
 	display: none;
+	justify-content: center;
 }
 
 #player2-wins {
+	background: #7AFEFE;
+	width: 100%;
+	padding: 20px;
 	font-family: 'Press Start 2P', cursive;
 	font-size: 60px;
 	display: none;
+	justify-content: center;
 }
 
 footer {
