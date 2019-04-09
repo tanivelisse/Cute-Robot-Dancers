@@ -133,6 +133,18 @@ h2 {
 	align-self: center;
 }
 
+#player1-wins {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 60px;
+	display: none;
+}
+
+#player2-wins {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 60px;
+	display: none;
+}
+
 footer {
 	margin: 20px;
 	align-content: flex-end;
