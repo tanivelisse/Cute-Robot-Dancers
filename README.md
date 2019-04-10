@@ -12,12 +12,20 @@ Cute Robot Dancers
 9. The user that avoids his coolness score to go down to zero wins the round.
 10. The users will be able to click restart after each battle to play again. 
 
-
-![dance robots]("https://i.imgur.com/DAf01TN.gif")
-
 MVP
 
 1. The game must have a start page with the instructions and the start button.
-2. The game must have a minimum of two characters of the player to choose. 
-2. The players should be able to use the keyboard to match the arrows on the game. 
-4. The game should have a least one round.
+2. The game must have a minimum of two characters for the player to choose. 
+3. The players should be able to use the keyboard to match the arrows on the game.
+4. The robots move at the same time the player presses the keys to match the arrows.  
+5. The game should have a least one round.
+
+Extras
+
+1. There is music on the background to create a more fun experience. 
+2. The screen clears to announce the winner at the end of the game. 
+
+Stretches
+
+1. The game can have more characters to choose from.
+2. The level of difficulty can be increased. 
