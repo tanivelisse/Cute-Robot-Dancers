@@ -25,7 +25,10 @@ Extras
 1. There is music on the background to create a more fun experience. 
 2. The screen clears to announce the winner at the end of the game. 
 
-Stretches
+Forthcoming Features
 
-1. The game can have more characters to choose from.
-2. The level of difficulty can be increased. 
+1. A larger variety of characters for the users to choose from.
+2. Animations that alert the users of their performance throughout the game.
+3. Freestyle section for users to just have fun with the robot animations. 
+4. A computer player to play against with for only one user. 
+
