@@ -1,6 +1,6 @@
 # CUTE ROBOT DANCERS
 
-("https://i.imgur.com/DAf01TN.gif")
+(https://i.imgur.com/DAf01TN.gif)
 
 
 First project for the SEI course at General Assembly Chicago.
