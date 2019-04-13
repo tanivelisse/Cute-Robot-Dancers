@@ -1,5 +1,7 @@
 # CUTE ROBOT DANCERS
 
+("https://i.imgur.com/DAf01TN.gif")
+
 
 First project for the SEI course at General Assembly Chicago.
 
@@ -7,7 +9,7 @@ Online game built using Javascript for the logic, CSS for the layout, and HTML5 
 
 ### Objectives
 
-My goal was to build a simple game that was fun to play and that could have more featueres added in time. 
+My goal was to build a simple game that was fun to play and that could have more features added in time. 
 
 I was inspired by games like "Dance Dance Revolution" and "Just Dance", and then adapted it to a keyboard friendly game.
 
@@ -17,7 +19,7 @@ The goal of CRD is to follow randomly generated arrows and try to match them wit
 
 The user is given a starting coolness score of 0, which will either increase if the entered move matches the expected move, or decrease if it doesn't.
 
-The user that increases his coolness score to go up to ten wins the round.
+The user that increases his coolness score to ten wins the round.
 
 
 
