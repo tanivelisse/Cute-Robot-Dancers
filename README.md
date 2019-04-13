@@ -1,4 +1,4 @@
-#CUTE ROBOT DANCERS
+# CUTE ROBOT DANCERS
 
 
 First project for the SEI course at General Assembly Chicago.
@@ -11,7 +11,7 @@ My goal was to build a simple game that was fun to play and that could have more
 
 I was inspired by games like "Dance Dance Revolution" and "Just Dance", and then adapted it to a keyboard friendly game.
 
-#RULES
+# RULES
 
 The goal of CRD is to follow randomly generated arrows and try to match them with the assigned letters on the keyboards that make the robot characters dance. 
 
@@ -21,7 +21,7 @@ The user that increases his coolness score to go up to ten wins the round.
 
 
 
-#PLANING
+# PLANING
 
 MVP
 
@@ -46,7 +46,7 @@ Forthcoming Features
 
 
 
-#DEVELOPMENT
+# DEVELOPMENT
 
 Beginning with the start button every interaction of the user with the game is translated to an animation on the screen to create a dynamic experience. Most of the animations that affect the display of the game elements are created using jQuery's `.css()` method, affecting the display properties in different components of the HTML structure to display specific content depending on the stage of the game. This way the user is transported from the start , to the characters screen, to the game and finally the winner display. 
 
