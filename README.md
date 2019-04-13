@@ -5,13 +5,13 @@ First project for the SEI course at General Assembly Chicago.
 
 Online game built using Javascript for the logic, CSS for the layout, and HTML5 for the structure.
 
-Objectives
+### Objectives
 
 My goal was to build a simple game that was fun to play and that could have more featueres added in time. 
 
 I was inspired by games like "Dance Dance Revolution" and "Just Dance", and then adapted it to a keyboard friendly game.
 
-# RULES
+### RULES
 
 The goal of CRD is to follow randomly generated arrows and try to match them with the assigned letters on the keyboards that make the robot characters dance. 
 
@@ -23,7 +23,7 @@ The user that increases his coolness score to go up to ten wins the round.
 
 # PLANING
 
-MVP
+### MVP
 
 1. The game must have a start page with the instructions and the start button.
 2. The game must have a minimum of two characters for the player to choose. 
@@ -31,12 +31,12 @@ MVP
 4. The robots move at the same time the player presses the keys to match the arrows.  
 5. The game should have a least one round.
 
-Extras
+### Extras
 
 1. There is music on the background to create a more fun experience. 
 2. The screen clears to announce the winner at the end of the game. 
 
-Forthcoming Features
+### Forthcoming Features
 
 1. A larger variety of characters for the users to choose from.
 2. Animations that alert the users of their performance throughout the game.
@@ -93,7 +93,7 @@ $('body').on('keydown', (event) => {
 		game.player1Match();
     	game.player1.left();
 ```
-
+Copy Right © TIMP 2019
 
 
 
