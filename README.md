@@ -1,8 +1,5 @@
 # CUTE ROBOT DANCERS
 
-(https://i.imgur.com/DAf01TN.gif)
-
-
 First project for the SEI course at General Assembly Chicago.
 
 Online game built using Javascript for the logic, CSS for the layout, and HTML5 for the structure.
