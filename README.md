@@ -1,16 +1,27 @@
-Cute Robot Dancers
+##CUTE ROBOT DANCERS
 
-## User Story
 
-1. The users will be able to read the game instructions before starting the game.
-2. The users will click the start button to begin the game.
-3. The users will choose one robot character each by clicking the robot's image on the screen.  
-4. The users will be able to make the robot dance by pressing the keys A, W, S, D for the robot on the left and J, I, K, L for the robot on the right. 
-5. The users will have a coolness score for each of their robot characters that starts at 0.
-6. The users need to match the arrows presented at the bottom of the stage using their respective keys when the arrows hit the mark to riase the score. 
-8. The users coolness score will be lowered again every time they miss a match. 
-9. The user that avoids his coolness score to go down to zero wins the round.
-10. The users will be able to click restart after each battle to play again. 
+First project for the SEI course at General Assembly Chicago.
+
+Online game built using Javascript for the logic, CSS for the layout, and HTML5 for the structure.
+
+Objectives
+
+My goal was to build a simple game that was fun to play and that could have more featueres added in time. 
+
+I was inspired by games like "Dance Dance Revolution" and "Just Dance", and then adapted it to a keyboard friendly game.
+
+RULES
+
+The goal of CRD is to follow randomly generated arrows and try to match them with the assigned letters on the keyboards that make the robot characters dance. 
+
+The user is given a starting coolness score of 0, which will either increase if the entered move matches the expected move, or decrease if it doesn't.
+
+The user that increases his coolness score to go up to ten wins the round.
+
+
+
+##PLANING
 
 MVP
 
@@ -31,4 +42,60 @@ Forthcoming Features
 2. Animations that alert the users of their performance throughout the game.
 3. Freestyle section for users to just have fun with the robot animations. 
 4. A computer player to play against with for only one user. 
+5. Different levels of diffuculty
+
+
+
+##DEVELOPMENT
+
+Beginning with the start button every interaction of the user with the game is translated to an animation on the screen to create a dynamic experience. Most of the animations that affect the display of the game elements are created using jQuery's `.css()` method, affecting the display properties in different components of the HTML structure to display specific content depending on the stage of the game. This way the user is transported from the start , to the characters screen, to the game and finally the winner display. 
+
+The robot characters are created using a class and instantiated once the player has chosen the specific character. Using the jQuery `.append()` method each character is assign its initial image. Inside the class we have the methods for the robots moves. Each method has the images that represent each one of characters moves. For each move the images are replaced using the jQuery `replaceWith()`method to create the animation of the robot characters. 
+
+
+To generate the arrows I used and array with the directions and a function with a for loop that uses Math.floor(Math.random()) to generate the random integer for index of the array.  
+```
+arrows:['left', 'up','right','down'],
+
+generateArrows(arr) {
+		for (let i = 0; i <1; i++) {
+			let indexNum = Math.floor(Math.random() * 3)
+			this.arrowDirection = arr[indexNum]
+			this.displayArrows();
+			this.playAudio();
+		}			
+
+```
+As you can see this function calls the function that displays the arrows on the screen and the function that starts the audio as well. This the music starts as soon as the arrows are generated and the player becomes aware that the game has begun. Bellow you can see the display arrows function. Using the jQuery UI fadeIn and fadeOut method we are able to create the animation effect of the arrows constantly reappearing on the screen, even if they are in the same direction and avoid for them to look static.  
+```
+	displayArrows() {
+		let whichArrow;
+		let $element = $('#arrows-display');
+		$element.fadeIn(200);
+		if (this.arrowDirection === "left") {
+			whichArrow = '⇦'
+		} else if (this.arrowDirection === "up") {
+			whichArrow = '⇧'
+		} else if (this.arrowDirection === "right") {
+			whichArrow = '⇨'
+		} else if (this.arrowDirection === "down") {
+			whichArrow = '⇩'
+		} 
+		$element.text(whichArrow);
+		$element.fadeOut(200);
+	},
+```
+Using jQuery event listeners I specified the players keys, the arrow direction it represented, called the function for the robots moves and called the function that confirm if there was a match for that specific player. All the factors that are affected by the user's manipulations of the keys are attached to the listeners. 
+``` 
+$('body').on('keydown', (event) => {
+	if (['a'].includes(event.key)) {
+		game.leftKey1 = true;
+		game.player1Match();
+    	game.player1.left();
+```
+
+
+
+
+
 

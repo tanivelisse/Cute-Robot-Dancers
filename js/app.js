@@ -62,7 +62,7 @@ class Robot {
 		}
 	}
 }
-
+//GAME OBJECT
 const game = {
 	player1:'',
 	player2:'',
@@ -129,7 +129,7 @@ const game = {
 			this.generateArrows(this.arrows);
 			$('#pl1Metric').text(`Coolness level: ${this.player1.coolness}`);
 			$('#pl2Metric').text(`Coolness level: ${this.player2.coolness}`);
-			} , 700)
+			} , 500)
 	},
 	playAudio() { 
   		document.getElementById('audio').play();
@@ -138,8 +138,6 @@ const game = {
   		document.getElementById('audio').pause(); 
 	},
 	generateArrows(arr) {
-		//console.log("generating arrows");
-		//console.log(this.player1);
 		for (let i = 0; i <1; i++) {
 			let indexNum = Math.floor(Math.random() * 3)
 			this.arrowDirection = arr[indexNum]
@@ -148,11 +146,9 @@ const game = {
 		}			
 	}, 
 	displayArrows() {
-		//console.log(this.arrowDirection);
 		let whichArrow;
 		let $element = $('#arrows-display');
-		$element.fadeIn();
-
+		$element.fadeIn(200);
 		if (this.arrowDirection === "left") {
 			whichArrow = '⇦'
 		} else if (this.arrowDirection === "up") {
@@ -162,38 +158,37 @@ const game = {
 		} else if (this.arrowDirection === "down") {
 			whichArrow = '⇩'
 		} 
-
 		$element.text(whichArrow);
-		$element.fadeOut();
+		$element.fadeOut(200);
 	},
 	player1Match() {
 		if (this.arrowDirection === "left" && this.leftKey1 === true && this.player1.coolness !== 10) {
 			this.player1.coolness ++;
-			console.log("Match!");
+			//console.log("Match!");
 		} else if (this.arrowDirection === "left" && this.leftKey1 === false && this.player1.coolness !== 0) {
 			this.player1.coolness--;
-			console.log("wrong!");
+			//console.log("wrong!");
 		}
 		if (this.arrowDirection === "up" && this.upKey1 === true && this.player1.coolness !== 10) {
 			this.player1.coolness ++;
-			console.log("Match!");
+			//console.log("Match!");
 		} else if (this.arrowDirection === "up" && this.upKey1 === false && this.player1.coolness !== 0) {
 			this.player1.coolness--;
-			console.log("wrong!");
+			//console.log("wrong!");
 		}
 		if (this.arrowDirection === "right" && this.rightKey1 === true && this.player1.coolness !== 10) {
 			this.player1.coolness ++;
-			console.log("Match!");
+			//console.log("Match!");
 		} else if (this.arrowDirection === "right" && this.rightKey1 === false && this.player1.coolness !== 0) {
 			this.player1.coolness--;
-			console.log("wrong!");
+			//console.log("wrong!");
 		}
 		if (this.arrowDirection === "down" && this.downKey1 === true && this.player1.coolness !== 10) {
 			this.player1.coolness++;
-			console.log("Match!");
+			//console.log("Match!");
 		} else if (this.arrowDirection === "down" && this.downKey1 === false && this.player1.coolness !== 0) {
 			this.player1.coolness--;
-			console.log("wrong pl2!");
+			//console.log("wrong pl2!");
 		}
 		this.winBattle();
 	},
@@ -258,7 +253,8 @@ const game = {
 
 }
 
-//jQuery 
+//jQuery listeners
+
 //start button
 $('#start').on('click', (e)=> {
 	console.log('Let the games begin!');
@@ -285,6 +281,7 @@ $('#boyB').on('click', ()=> {
 		backgroundColor: 'aqua'
 	})
 });
+
 //key listeners for player moves
 $('body').on('keydown', (event) => {
 	if (['a'].includes(event.key)) {
